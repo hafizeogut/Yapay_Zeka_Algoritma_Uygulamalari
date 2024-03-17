@@ -7,15 +7,15 @@ w1 = 1
 w2 = 1
 
 # Öğrenme oranı
-alpha = 0.1
+alpha = 0.2
 
 # Veriler
 X1 = [1,2]
-X2 = [3, 4]
-y = [1, -1]
+X2 = [3,4]
+y = [1,-1]
 
 # İterasyon sayısı
-iterations = 5
+iterations = 3
 
 # Ağırlıkların ve hataların kaydedileceği listeleri oluştur
 w0_values = [w0]
@@ -43,11 +43,13 @@ for _ in range(iterations):
         
         # Ağırlıkları güncelle
         w0 = w0 - alpha * (y_pred - y[i])
-        print(w0)
+        print("w0",w0)
+        
         w1 = w1 - alpha * (y_pred - y[i]) * X1[i]
-        # print("w1",w1)
+        print("w1",w1)
+        
         w2 = w2 - alpha * (y_pred - y[i]) * X2[i]
-        # print("w1",w1)
+        print("w2",w2)
         
     # Ağırlıkları ve hataları kaydet
     w0_values.append(w0)
